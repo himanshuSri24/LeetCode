@@ -6,7 +6,7 @@ class Solution {
         {
             ans.append(s.charAt(i) + "");
             if(i+1 < len)
-                ans.append((char)(s.charAt(i)+(int)(s.charAt(i+1)-'0')) + "");
+                ans.append((char)(s.charAt(i)+s.charAt(i+1)-'0') + "");
         }
         return ans.toString();
     }
