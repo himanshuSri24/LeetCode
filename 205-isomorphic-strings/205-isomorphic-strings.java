@@ -15,6 +15,8 @@ class Solution {
             char ct = t.charAt(i);
             if(!map.containsValue(ct))
                 map.putIfAbsent(cs, ct);
+            else if(map.containsValue(ct) && map.containsKey(cs) && map.get(cs) != ct)
+                return false;
             ans.append(map.get(cs));
             // System.out.println(ans);
         }
