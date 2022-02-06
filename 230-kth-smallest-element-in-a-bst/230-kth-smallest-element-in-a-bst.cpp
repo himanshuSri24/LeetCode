@@ -26,10 +26,10 @@ public:
             // cout << root->val << endl;
             count--;
             // cout << root->val << flag << count << endl;
-            if(count == 0 && !flag)
+            if(count == 0)
             {
                 result = root->val;
-                flag = true;
+                // flag = true;
                 // cout << result << endl;
                 return;
             }
