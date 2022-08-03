@@ -1,20 +1,16 @@
 class Solution {
     public char findTheDifference(String s, String t) {
-        int[] freq = new int[26];
-        for(char ch : t.toCharArray())
-        {
-            freq[(int)(ch - 'a')]++;
+        char[] a = s.toCharArray(), b = t.toCharArray();
+        Arrays.sort(a);
+        Arrays.sort(b);
+        int i = 0, j = 0;
+        while(i < a.length && j < b.length){
+            if(a[i] != b[j]) return b[j];
+            else{
+                i++;
+                j++;
+            }
         }
-        
-        for(char ch : s.toCharArray())
-        {
-            freq[(int)(ch - 'a')]--;
-        }
-        for(int i = 0; i < freq.length; i ++)
-        {
-            if(freq[i] == 1)
-                return (char)('a' + i);
-        }
-        return 'a';
+        return b[j];
     }
 }
